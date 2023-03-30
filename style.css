@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Iceberg&family=JetBrains+Mono:wght@200&display=swap");
+
+:root {
+  --navbar-color: #35393a;
+  --bg-gradient: linear-gradient(
+    230.95deg,
+    #232525 4.6%,
+    #213641 60.69%,
+    #1e5264 63.43%,
+    #152b32 70.96%
+  );
+  --add-border: #10a4c5;
+  --add-border-hover: #0e819b;
+
+  --add-bg: #19b6d8;
+  --add-bg-hover: #17a4c4;
+  --menu-color: #7510c5;
+  --menu-border-color: #520691;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: 100%;
+}
+
+.navbar-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 1440px;
+  width: 100%;
+  height: 140px;
+  z-index: -1;
+}
+.contact {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.me-border {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+}
+.me-border-path {
+  position: absolute;
+  bottom: 0px;
+  transform: translate(20%);
+}
+
+.me-full-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.plane {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.detail {
+  display: inline-block;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+}
+
+.web {
+  font-family: "Iceberg";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 157.5%;
+  /* font-size: 8rem; */
+  font-size: clamp(2.5rem, 0.5rem + 7.4vw, 10em);
+  /* identical to box height, or 205px */
+  text-align: center;
+  letter-spacing: 0.19em;
+  color: #ffffff;
+  -webkit-text-stroke: 3px #000;
+  text-stroke: 3px #000;
+  margin-bottom: 0;
+}
+
+.me-border-path path {
+  stroke: #7c7c7c;
+  stroke-width: 2px;
+  fill: transparent;
+}
+
+.name {
+  color: white;
+  font-size: clamp(1.5em, 0.5rem + 2vw, 2.8rem);
+  text-align: end;
+  font-family: "Iceberg";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 157.5%;
+  /* identical to box height, or 95px */
+
+  letter-spacing: 0.19em;
+
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+.circle {
+  --diameter: 65px;
+
+  width: var(--diameter);
+  height: var(--diameter);
+  background-color: var(--add-bg);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 7px solid var(--add-border);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.circle:hover {
+  border: 5px solid var(--add-border-hover);
+}
+.circle:hover path {
+  fill: white;
+}
+.circle svg {
+  width: 40px;
+}
+.circle > svg path {
+  fill: rgb(166, 249, 246);
+}
+.circle > .menu {
+  position: absolute;
+  display: flex;
+  gap: 30px;
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+  z-index: -1;
+}
+
+.circle > .menu > .s-circle {
+  --diameter: 40px;
+
+  width: var(--diameter);
+  height: var(--diameter);
+  background-color: var(--menu-color);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-20px);
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0pt var(--menu-border-color);
+  transition: all 0.2s ease-in-out;
+}
+.menu > .s-circle:hover {
+  background-color: #8a16e9;
+  box-shadow: 0 0 0 3pt var(--menu-border-color);
+}
+.s-circle > svg {
+  width: 25px;
+}
+.circle > .menu > .s-circle:nth-child(2) {
+  transform: translateY(-70px);
+}
+.circle > .menu > .s-circle:last-child > svg {
+  width: 20px;
+}
+
+.circle.closed .menu {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.detail > .web {
+  transform-style: preserve-3d;
+  perspective: 300px;
+}
+.detail > .web > span.first {
+  display: inline-block;
+  transform: rotateX(90deg);
+  opacity: 0;
+  transform-origin: bottom;
+}
+
+.detail > .web > span.last {
+  display: inline-block;
+  transform: translateX(0%);
+  opacity: 1;
+  transform-origin: bottom;
+}
+
+@media screen and (max-width: 700px) {
+  .me-full-svg {
+    width: 150px;
+  }
+}
