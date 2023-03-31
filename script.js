@@ -10,7 +10,7 @@ gsap.to(".detail > .web > span.first", {
     rotateX: "0deg",
     stagger: 0.5,
     opacity: 1,
-    duration: 1.2,
+    duration: 2,
     ease: "bounce"
 })
 
@@ -18,24 +18,33 @@ gsap.from(".detail > .web > span.last", {
     y: "-100%",
     opacity: 0,
     delay: 0.4,
-    duration: 1.6,
+    duration: 2,
     ease: "bounce"
 })
 
+let nameText = new SplitType(".detail > .name")
 
-gsap.from(".detail > .name", {
-    x: "100%",
+gsap.from(".detail > .name .char", {
+    y: "200%",
+    stagger: 0.1,
     opacity: 0,
     delay: 0.5,
-    duration: 1.2,
-    ease: "power1"
+    duration: 0.5,
+    ease: "ease"
 })
 
-// gsap.from(".me-border-path path", {
-//     opacity: 0,
-//     duration: 1,
-//     stagger: 0.1
-// })
+var tl = gsap.timeline()
+
+tl.from(".me-full-svg-large path", {
+    opacity: 0,
+    stagger: 0.01,
+    duration: 0.01
+})
+tl.to(".me-full-svg", {
+    opacity: 1,
+    duration: 0.4
+})
+
 
 let paths = document.querySelectorAll(".me-border-path path")
 

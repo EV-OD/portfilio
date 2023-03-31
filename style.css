@@ -63,8 +63,10 @@ body {
 
 .me-full-svg {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -2px;
+  right: 3px;
+  opacity: 0;
+  z-index: 10;
 }
 
 .plane {
@@ -216,8 +218,29 @@ body {
   transform-origin: bottom;
 }
 
+.me-full-svg-large {
+  height: 60px;
+  width: 40px;
+  transform: scale(9.1);
+  transform-origin: bottom right;
+  position: absolute;
+  bottom: -70px;
+  right: -100px;
+  z-index: 5;
+}
+
 @media screen and (max-width: 700px) {
   .me-full-svg {
     width: 150px;
+  }
+  .me-full-svg-large {
+    height: 45px;
+    width: 28px;
+    transform: scale(7);
+    transform-origin: bottom right;
+    position: absolute;
+    bottom: -42px;
+    right: -49px;
+    z-index: 5;
   }
 }
