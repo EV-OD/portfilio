@@ -1,10 +1,33 @@
 var circle = document.querySelector(".circle")
-circle.classList.remove("closed")
+var s_circles = document.querySelectorAll(".s-circle")
+window.onload = () => {
+    circle.classList.remove("closed")
 
-circle.addEventListener("click", () => {
+}
+
+circle.addEventListener("click", (e) => {
     circle.classList.toggle("closed")
-
 })
+
+s_circles.forEach(s_circle => {
+    s_circle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (s_circle.classList.contains("contact-s")) {
+            window.location = "contact.html"
+
+        } else if (s_circle.classList.contains("project-s")) {
+            window.location = "project.html"
+
+
+        } else if (s_circle.classList.contains("skill-s")) {
+            window.location = "skill.html"
+
+
+        }
+    })
+})
+
+
 
 gsap.to(".detail > .web > span.first", {
     rotateX: "0deg",

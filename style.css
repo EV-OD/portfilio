@@ -185,6 +185,31 @@ body {
   background-color: #8a16e9;
   box-shadow: 0 0 0 3pt var(--menu-border-color);
 }
+
+.s-circle::after {
+  content: "contact";
+  position: absolute;
+  top: -40px;
+  background-color: white;
+  padding: 4px;
+  border-radius: 4px;
+  transform: scale(0);
+  font-family: "JetBrains Mono";
+  font-size: 0.9em;
+  transition: transform 0.2s ease;
+}
+
+.s-circle:hover::after {
+  transform: scale(1);
+}
+
+.project-s::after {
+  content: "projects";
+}
+.skill-s::after {
+  content: "skills";
+}
+
 .s-circle > svg {
   width: 25px;
 }
