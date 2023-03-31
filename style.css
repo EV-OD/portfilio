@@ -194,13 +194,15 @@ body {
   padding: 4px;
   border-radius: 4px;
   transform: scale(0);
+  opacity: 0;
   font-family: "JetBrains Mono";
   font-size: 0.9em;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .s-circle:hover::after {
   transform: scale(1);
+  opacity: 1;
 }
 
 .project-s::after {
