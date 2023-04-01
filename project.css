@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Iceberg&family=JetBrains+Mono:wght@200&display=swap");
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+:root {
+  --card-color: #282828;
+  --card-color-hover: rgb(27, 27, 27);
+}
+
+main {
+  min-height: 100vh;
+  width: 100vw;
+  background: url("projects/bg-3.jpg"), #000000;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+}
+main h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 2.5rem + 1vw, 5rem);
+}
+.hero_Area {
+  margin-inline: 10px;
+  text-align: center;
+}
+main p {
+  font-weight: 100;
+  font-size: 1.5rem;
+  line-height: 53px;
+  margin: 0;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 30px;
+  justify-content: center;
+}
+@media screen and (max-width: 600px) {
+  .cards {
+    width: 100%;
+    gap: 10px;
+  }
+  .card {
+    box-shadow: 20px 0px 13pt 3pt #1b1b1b;
+  }
+  .card:not(:first-child) {
+    box-shadow: 20px 0px 13pt 3pt #1b1b1b !important;
+  }
+  .card:hover {
+    background-color: var(--card-color-hover);
+    transform: scale(1.1) translate(-10px, -5px) !important;
+  }
+}
+.card {
+  background-color: var(--card-color);
+  padding: 20px;
+  padding-inline: 30px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 20px;
+  transform: scale(1) translate(0, 0);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 20px 0px 13pt 3pt #1b1b1b;
+}
+
+.card:not(:first-child) {
+  box-shadow: -17px 0px 13pt 3pt #1b1b1b;
+}
+
+.card:hover {
+  background-color: var(--card-color-hover);
+  transform: scale(1.1) translate(-30px, -5px);
+}
+.card h4 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.card p {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1ch;
+  margin-bottom: 5px;
+}
+section {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  font-family: "JetBrains Mono";
+  background-color: #000000;
+}
+.left {
+  padding: 20px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  color: white;
+  width: 50%;
+  padding-right: 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -10%;
+  padding-left: 3%;
+}
+
+.left h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+.left p {
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 670px) {
+  section .right img {
+    width: 100% !important;
+  }
+  .left h1 {
+    font-size: calc(2vw + 0.5rem) !important;
+  }
+  .left p {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  section {
+    flex-direction: column;
+    height: 100%;
+  }
+  .left {
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0px;
+    padding-inline: 50px;
+  }
+
+  .left h1 {
+    font-size: calc(2vw + 1rem);
+  }
+  .left p {
+    font-size: 1rem;
+  }
+  section .right .img {
+    width: 70%;
+  }
+  section .right img {
+    width: 70%;
+  }
+  section .right {
+    flex-grow: 1;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+section .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+section .right img {
+  width: 80%;
+}
