@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Iceberg&family=JetBrains+Mono:wght@200&display=swap");
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  background: #ffffff;
+  box-shadow: inset 0px 0px 13px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 800px;
+  margin-inline: 10px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3%;
+  align-items: center;
+}
+
+h1 {
+  width: min-content;
+  font-family: "JetBrains Mono";
+}
+button {
+  width: 50px;
+  height: 50px;
+
+  background: #565656;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e1e1e;
+}
+
+button svg {
+  width: 30px;
+}
+.container {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  overflow: hidden;
+}
+.area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  padding-block: 20px;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono";
+  background-color: white;
+  margin-inline: 10px;
+  margin-bottom: 10px;
+  transform: rotateY(0deg);
+  transform-origin: right;
+  opacity: 1;
+  transition: transform 0.7s ease-in-out, opacity 0s ease-in-out 0.7s;
+}
+
+.closed {
+  transform: rotateY(90deg);
+}
+
+.area .field {
+  margin-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.area .loader {
+  width: 100%;
+  max-width: 300px;
+  height: 13px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  position: relative;
+}
+.gray.loader::after {
+  background-color: rgb(102, 102, 102) !important;
+}
+
+.area .loader::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: var(--w, 80%);
+  border-radius: 10px;
+  height: 70%;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  background-color: black;
+}
+
+.area2 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-inline: 20px;
+}
+.area2 .items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

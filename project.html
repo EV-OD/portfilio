@@ -17,56 +17,93 @@
         </p>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-        <div class="card">
-          <h4 class="title">Acss</h4>
-          <p class="detail">small css engine</p>
-        </div>
-      </div>
+      <div class="cards"></div>
     </main>
-    <section class="acss section">
-      <div class="left">
-        <h1>Acss</h1>
-        <p>
-          Acss is a CSS engine that you have developed, which includes features
+  </body>
+  <script>
+    let cards = document.querySelector(".cards");
+    let data = [
+      {
+        name: "Nepcount",
+        link: "https://github.com/EV-OD/nepcount",
+        detail:
+          "Nepcount is expert system for small business which includes features such as adding bought items and sold items.It also gives features of real time search for adding sold items.It field disabling and updating features also.",
+        img: "projects/nepcount.png",
+      },
+      {
+        name: "Acss",
+        link: "https://acsspage.evod.repl.co/",
+        detail: `
+          Acss is a CSS engine that I have developed, which includes features
           such as if and else statements, external state hooks, CSS variables,
           and calculations. It appears that you have also provided guidelines on
           the syntax and usage of each feature in your documentation.
-        </p>
-      </div>
-      <div class="right">
-        <div class="img">
-          <img src="projects/acss-2.png" alt="" srcset="" />
-        </div>
-      </div>
-    </section>
-  </body>
+    `,
+        img: "projects/acss-2.png",
+      },
+      {
+        name: "commandLine",
+        link: "https://github.com/pythons65/allwcons",
+        detail: `CommandLine is a terminal that I have developed, which includes
+          features such as importing own command using python using simple and
+          short code.`,
+        img: "projects/console.png",
+      },
+      {
+        name: "Math interpeter",
+        link: "https://github.com/pythons65/sketch",
+        detail: `
+    Your project is a math interpreter written in Python that can perform basic arithmetic operations such as addition, subtraction, multiplication, and division. Additionally, it supports more advanced operations such as modulo, factorial, and power.
+    `,
+        img: "projects/math.png",
+      },
+      {
+        name: "SketchJs",
+        link: "https://github.com/pythons65/allwcons",
+        detail: "get p5.js experience from dom element",
+        img: "projects/sketchjs.png",
+      },
+      {
+        name: "chatjs",
+        link: "https://ev-od.github.io/chatjs/",
+        img: "projects/chatjs.png",
+        detail: "A simple Chat application",
+      },
+      {
+        name: "Webtool",
+        link: "https://ev-od.github.io/webtool/",
+        img: "projects/webtool.png",
+        detail:
+          "A simple HTML,CSS and javascript editor with live preview feature",
+      },
+    ];
+    data.forEach((d, i) => {
+      let cards = document.querySelector(".cards");
+
+      let code = `
+      <a class="card" href="${d.link}" target="_blank">
+          <h4 class="title">${d.name}</h4>
+          <p class="detail">small css engine</p>
+        </a>
+      `;
+      cards.innerHTML = cards.innerHTML + code;
+
+      let sectionCode = `
+      <section class="section ${(i + 1) % 2 == 0 ? "reverse" : ""}">
+      <div class="left">
+        <h1>${d.name}</h1>
+        <p>
+          ${d.detail ? d.detail : ""}
+          </p>
+          </div>
+          <div class="right">
+            <div class="img">
+              ${d.img ? `<img src="${d.img}" alt="${d.name}-img" />` : ""}
+              </div>
+              </div>
+              </section>
+              `;
+      document.body.innerHTML = document.body.innerHTML + sectionCode;
+    });
+  </script>
 </html>
